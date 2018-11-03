@@ -1,0 +1,1 @@
+To create the data base, run the file create.sql. 5 tables (Phone, Company, RatingWebsite, Madeby, and Ratedby) will be created and 3 of them (Phone, Company, Madeby) will be populated with sample entries.

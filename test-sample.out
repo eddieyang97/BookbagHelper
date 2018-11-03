@@ -1,0 +1,9 @@
+SELECT *
+FROM Phone
+WHERE price >= ALL (
+  SELECT price FROM Phone
+);
+     name      | price | released_date | weight | screen_size |                cpu                 | gps | battery_size | front_camera_resolution | back_camera_resolution $
+---------------+-------+---------------+--------+-------------+------------------------------------+-----+--------------+-------------------------+------------------------$
+ iPhone XS MAX |  1099 | 2018-09-21    |    208 |       102.9 | Hexa-core (2x Vortex + 4x Tempest) | Yes |         3174 |                       7 |                     12 $
+(1 row)
