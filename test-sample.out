@@ -1,0 +1,9 @@
+SELECT *
+FROM Professor
+WHERE quality >= ALL (
+  SELECT quality FROM Professor
+);
+     name     | gender | quality | difficulty | number_of_reviews | url
+--------------+--------+---------+------------+-------------------+-----
+ Carlo Tomasi | Male   |     4.5 |        3.1 |                 7 |
+(1 row)
