@@ -27,7 +27,9 @@ CREATE TABLE Comment
 
 INSERT INTO Course VALUES ('Modern Chinese Culture', 'CHINESE 455');
 INSERT INTO Course VALUES ('Chinese Society', 'CHINESE 456');
-INSERT INTO Professor VALUES ('Kang Liu', 'Male', 1.7, 3.5, 3);
+INSERT INTO Professor VALUES ('Kang Liu', 'Male', 3.5, 1.7, 3);
+INSERT INTO Professor VALUES('Owen Astrachan', 'Male', 4.0, 2.5, 7);
+INSERT INTO Professor VALUES('Carlo Tomasi', 'Male', 4.5, 3.1, 7);
 INSERT INTO Teaches VALUES('Kang Liu', '2018F', 'Modern Chinese Culture', '00001');
 INSERT INTO Teaches VALUES('Kang Liu', '2018S', 'Chinese Society', '00002');
 INSERT INTO Comment VALUEs('00001', 'Very interesting course. Learned a lot. Decent Workload.');
