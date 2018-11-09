@@ -1,0 +1,7 @@
+Eddie primarily worked on UI and demo presentation.
+Frank Yin worked primarily on Java web implementation.
+Frank Qu worked primarily on populating database and editing progress report.
+Jack worked primarily on fixing database info and formatting data.
+
+We are starting a new project topic which consumed a lot of time and effort to rebuild database and designs.
+Everyone worked hard on the project, but there is still a long way to go.
