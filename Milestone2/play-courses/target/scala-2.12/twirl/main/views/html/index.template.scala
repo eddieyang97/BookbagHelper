@@ -25,30 +25,29 @@ import play.core.j.PlayFormsMagicForJava._
 object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[List[String],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(drinkers: List[String]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(professors: List[String]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.26*/("""
+Seq[Any](format.raw/*1.28*/("""
 
-"""),_display_(/*3.2*/main("All Drinkers")/*3.22*/ {_display_(Seq[Any](format.raw/*3.24*/(""" """)))}/*3.26*/ {_display_(Seq[Any](format.raw/*3.28*/("""
-  """),format.raw/*4.3*/("""<p>Click on drinker below to view more information:
+"""),_display_(/*3.2*/main("All Professors")/*3.24*/ {_display_(Seq[Any](format.raw/*3.26*/(""" """)))}/*3.28*/ {_display_(Seq[Any](format.raw/*3.30*/("""
+  """),format.raw/*4.3*/("""<p>Click on professor below to view more information:
     <ul>
-      """),_display_(/*6.8*/for(name <- drinkers) yield /*6.29*/ {_display_(Seq[Any](format.raw/*6.31*/("""
-        """),format.raw/*7.9*/("""<li><a href=""""),_display_(/*7.23*/routes/*7.29*/.Application.viewDrinker(name)),format.raw/*7.59*/("""">"""),_display_(/*7.62*/name),format.raw/*7.66*/("""</a></li>
+      """),_display_(/*6.8*/for(name <- professors) yield /*6.31*/ {_display_(Seq[Any](format.raw/*6.33*/("""
+        """),format.raw/*7.9*/("""<li><a href=""""),_display_(/*7.23*/routes/*7.29*/.Application.viewProfessor(name)),format.raw/*7.61*/("""">"""),_display_(/*7.64*/name),format.raw/*7.68*/("""</a></li>
       """)))}),format.raw/*8.8*/("""
     """),format.raw/*9.5*/("""</ul>
   </p>
-""")))}),format.raw/*11.2*/("""
-"""))
+""")))}))
       }
     }
   }
 
-  def render(drinkers:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(drinkers)
+  def render(professors:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(professors)
 
-  def f:((List[String]) => play.twirl.api.HtmlFormat.Appendable) = (drinkers) => apply(drinkers)
+  def f:((List[String]) => play.twirl.api.HtmlFormat.Appendable) = (professors) => apply(professors)
 
   def ref: this.type = this
 
@@ -57,11 +56,11 @@ Seq[Any](format.raw/*1.26*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 08 18:52:19 EST 2018
-                  SOURCE: /vagrant/play-beers/app/views/index.scala.html
-                  HASH: bfd1c010f2801b0a5128b2d6379f09e600430537
-                  MATRIX: 954->1|1073->25|1101->28|1129->48|1168->50|1188->52|1227->54|1256->57|1349->125|1385->146|1424->148|1459->157|1499->171|1513->177|1563->207|1592->210|1616->214|1662->231|1693->236|1737->250
-                  LINES: 28->1|33->1|35->3|35->3|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|39->7|39->7|39->7|39->7|39->7|40->8|41->9|43->11
+                  DATE: Thu Nov 29 21:36:26 EST 2018
+                  SOURCE: /vagrant/316Proj/Milestone2/play-courses/app/views/index.scala.html
+                  HASH: 15855a0bc07453f7b524074291cb440e16569153
+                  MATRIX: 954->1|1075->27|1103->30|1133->52|1172->54|1192->56|1231->58|1260->61|1355->131|1393->154|1432->156|1467->165|1507->179|1521->185|1573->217|1602->220|1626->224|1672->241|1703->246
+                  LINES: 28->1|33->1|35->3|35->3|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|39->7|39->7|39->7|39->7|39->7|40->8|41->9
                   -- GENERATED --
               */
           

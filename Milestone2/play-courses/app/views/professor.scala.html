@@ -1,0 +1,12 @@
+@(professorInfo: models.CourseDB.ProfessorInfo)
+
+@main("Professor Information: " + professorInfo.name) { } {
+  <p>
+    Gender: @professorInfo.gender<br/>
+    Quality Rating: @professorInfo.quality<br/>
+    Difficulty Rating: @professorInfo.difficulty<br/>
+    Number of Reviews: @professorInfo.numberOfReviews<br/>
+    Url: @professorInfo.url<br/>
+    <a href="@routes.Application.index()">all professors</a>.
+  </p>
+}

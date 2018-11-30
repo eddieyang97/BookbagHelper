@@ -75,53 +75,68 @@ public class CourseDB {
         return getAllNames("Course");
     }
 
-    /*
-    public DrinkerInfo getProfessorInfo(String name) throws SQLException {
+    
+    public ProfessorInfo getProfessorInfo(String name) throws SQLException {
         Connection connection = null;
-        DrinkerInfo professorInfo = null;
+        ProfessorInfo professorInfo = null;
         try {
             connection = db.getConnection();
-            // retrieve basic info:
+            // retrieve gender info 
             PreparedStatement statement = connection
-                .prepareStatement("SELECT address FROM drinker WHERE name = ?");
+                .prepareStatement("SELECT gender FROM professor WHERE name = ?");
             statement.setString(1, name);
             ResultSet rs = statement.executeQuery();
             if (! rs.next()) {
                 return null;
             }
-            String address = rs.getString(1);
+            String gender = rs.getString(1);
             rs.close();
             statement.close();
-            // retrieve beers liked:
+            // retrieve quality info:
             statement = connection
-                .prepareStatement("SELECT beer FROM Likes WHERE drinker =?");
+                .prepareStatement("SELECT quality FROM professor WHERE name = ?");
             statement.setString(1, name);
             rs = statement.executeQuery();
-            ArrayList<String> beers = new ArrayList<String>();
-            while (rs.next()) {
-                String beer = rs.getString(1);
-                beers.add(beer);
+            if (! rs.next()) {
+                return null;
             }
+            Double quality = rs.getDouble(1);
             rs.close();
             statement.close();
-            // retrieve bars frequented:
+            // retrieve difficulty info:
             statement = connection
-                .prepareStatement("SELECT bar, times_a_week" +
-                                  " FROM Frequents" +
-                                  " WHERE drinker = ?");
+                .prepareStatement("SELECT difficulty FROM professor WHERE name =?");
             statement.setString(1, name);
             rs = statement.executeQuery();
-            ArrayList<String> bars = new ArrayList<String>();
-            ArrayList<Integer> times = new ArrayList<Integer>();
-            while (rs.next()) {
-                String bar = rs.getString(1);
-                bars.add(bar);
-                int times_a_week = rs.getInt(2);
-                times.add(times_a_week);
+            if (! rs.next()) {
+                return null;
             }
+            Double difficulty = rs.getDouble(1);
             rs.close();
             statement.close();
-            drinkerInfo = new DrinkerInfo(name, address, beers, bars, times);
+            // retrieve number_of_reviews info:
+            statement = connection
+                .prepareStatement("SELECT number_of_reviews FROM professor WHERE name =?");
+            statement.setString(1, name);
+            rs = statement.executeQuery();
+            if (! rs.next()) {
+                return null;
+            }
+            int number_of_reviews = rs.getInt(1);
+            rs.close();
+            statement.close();
+            // retrieve url info:
+            statement = connection
+                .prepareStatement("SELECT url FROM professor WHERE name =?");
+            statement.setString(1, name);
+            rs = statement.executeQuery();
+            if (! rs.next()) {
+                return null;
+            }
+            String url = rs.getString(1);
+            rs.close();
+            statement.close();
+            professorInfo = new ProfessorInfo(name, gender, quality, difficulty, number_of_reviews, url);
         } finally {
             if (connection != null) {
                 try {
@@ -130,9 +145,10 @@ public class CourseDB {
                 }
             }
         }
-        return drinkerInfo;
+        return professorInfo;
     }
 
+    /*
     public boolean updateDrinkerInfo(DrinkerInfo drinkerInfo)
         throws SQLException {
         Connection connection = null;

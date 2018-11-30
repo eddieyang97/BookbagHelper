@@ -37,22 +37,21 @@ Seq[Any](format.raw/*1.48*/("""
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Play/Java DB-Beers Example</title>
-    <meta name="description" content="A sample Play/Java website for db-beers"/>
-    <meta name="keywords" content="play, java, db-beers"/>
+    <title>Play/Java DB-Courses at Duke University</title>
+    <meta name="description" content="A Play/Java website for db-courses, a database for courses and professors at Duke University"/>
+    <meta name="keywords" content="play, java, db-courses"/>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
     <link rel="stylesheet" href=""""),_display_(/*12.35*/routes/*12.41*/.Assets.at("stylesheets/main.css")),format.raw/*12.75*/("""" type="text/css" media="screen"/>
     """),_display_(/*13.6*/script),format.raw/*13.12*/("""
   """),format.raw/*14.3*/("""</head>
   <body>
-    <h1><img src=""""),_display_(/*16.20*/routes/*16.26*/.Assets.at("images/beer.jpg")),format.raw/*16.55*/("""" style="float:right"/>Play/Java DB-Beers Example</h1>
+    <h1><img src=""""),_display_(/*16.20*/routes/*16.26*/.Assets.at("images/favicon.png")),format.raw/*16.58*/("""" style="float:right"/>Play/Java DB-Courses at Duke University</h1>
     <hr/>
     <h2 id="heading">"""),_display_(/*18.23*/heading),format.raw/*18.30*/("""</h2>
     <div id="content">"""),_display_(/*19.24*/content),format.raw/*19.31*/("""</div>
     <hr/>
   </body>
-</html>
-"""))
+</html>"""))
       }
     }
   }
@@ -68,10 +67,10 @@ Seq[Any](format.raw/*1.48*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 08 18:52:19 EST 2018
-                  SOURCE: /vagrant/play-beers/app/views/main.scala.html
-                  HASH: 5fcaf13dfe67f54917836d0be4b4a0fb4effbd11
-                  MATRIX: 957->1|1098->47|1126->49|1625->521|1640->527|1695->561|1761->601|1788->607|1818->610|1881->646|1896->652|1946->681|2060->768|2088->775|2144->804|2172->811
+                  DATE: Thu Nov 29 20:45:37 EST 2018
+                  SOURCE: /vagrant/316Proj/Milestone2/play-courses/app/views/main.scala.html
+                  HASH: e416e96e2d91931e4b184104421382a28f2f8a42
+                  MATRIX: 957->1|1098->47|1126->49|1693->589|1708->595|1763->629|1829->669|1856->675|1886->678|1949->714|1964->720|2017->752|2144->852|2172->859|2228->888|2256->895
                   LINES: 28->1|33->1|35->3|44->12|44->12|44->12|45->13|45->13|46->14|48->16|48->16|48->16|50->18|50->18|51->19|51->19
                   -- GENERATED --
               */
