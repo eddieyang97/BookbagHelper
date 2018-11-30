@@ -1,0 +1,17 @@
+1. Home page: 
+	a. Search for a specific professor or course
+	b. Go to the page containing a table with basic info of all the professors
+	c. Go to the page containing a table with basic info of all the courses
+2. Each professor has a page:
+	a. Profile pic if possible
+	b. Basic info
+	c. Shows all comments
+3. Each course has a page:
+	a. Shows all comments
+	b. Allows users to filter the comments for this course by professor or by semester
+4. Professor Listing page:
+	a. Shows a table with all the basic info of a professor: Quality, Difficulty, and Number of Comments
+	b. Allows users to click on a professor to access his own page
+5. Course Listing Page:
+	a. Shows a table with all the basic info of a course: Number of Comments
+	b. Allows users to click on a course to access the course page
