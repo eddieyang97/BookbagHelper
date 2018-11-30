@@ -19,6 +19,7 @@ CREATE TABLE Professor
 
 CREATE TABLE Teaches
 (prof_name VARCHAR(128) NOT NULL REFERENCES Professor(name),
+ sec_prof_name VARCHAR(128) NOT NULL REFERENCES Professor(name),
  semester VARCHAR(32),
  course_name VARCHAR(128) NOT NULL REFERENCES Course(name),
  pairingID VARCHAR(32) NOT NULL PRIMARY KEY
