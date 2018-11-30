@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/vagrant/play-courses/conf/routes
-// @DATE:Thu Nov 08 20:09:47 EST 2018
+// @SOURCE:/vagrant/316Proj/play-courses/conf/routes
+// @DATE:Thu Nov 08 22:39:18 EST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -46,36 +46,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
-        }
-      """
-    )
-  
-    // @LINE:7
-    def editDrinker: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.editDrinker",
-      """
-        function(name0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "edit-drinker/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0))})
-        }
-      """
-    )
-  
-    // @LINE:8
-    def updateDrinker: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.updateDrinker",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "update-drinker"})
-        }
-      """
-    )
-  
-    // @LINE:6
-    def viewDrinker: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Application.viewDrinker",
-      """
-        function(name0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "drinker/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("name", name0))})
         }
       """
     )

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/vagrant/play-courses/conf/routes
-// @DATE:Thu Nov 08 20:09:47 EST 2018
+// @SOURCE:/vagrant/316Proj/play-courses/conf/routes
+// @DATE:Thu Nov 08 22:39:18 EST 2018
 
 package router
 
@@ -41,9 +41,6 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.Application.index()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """drinker/""" + "$" + """name<[^/]+>""", """controllers.Application.viewDrinker(name:String)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """edit-drinker/""" + "$" + """name<[^/]+>""", """controllers.Application.editDrinker(name:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """update-drinker""", """controllers.Application.updateDrinker()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -70,65 +67,11 @@ class Routes(
     )
   )
 
-  // @LINE:6
-  private[this] lazy val controllers_Application_viewDrinker1_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("drinker/"), DynamicPart("name", """[^/]+""",true)))
-  )
-  private[this] lazy val controllers_Application_viewDrinker1_invoker = createInvoker(
-    Application_1.viewDrinker(fakeValue[String]),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.Application",
-      "viewDrinker",
-      Seq(classOf[String]),
-      "GET",
-      this.prefix + """drinker/""" + "$" + """name<[^/]+>""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:7
-  private[this] lazy val controllers_Application_editDrinker2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("edit-drinker/"), DynamicPart("name", """[^/]+""",true)))
-  )
-  private[this] lazy val controllers_Application_editDrinker2_invoker = createInvoker(
-    Application_1.editDrinker(fakeValue[String]),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.Application",
-      "editDrinker",
-      Seq(classOf[String]),
-      "GET",
-      this.prefix + """edit-drinker/""" + "$" + """name<[^/]+>""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:8
-  private[this] lazy val controllers_Application_updateDrinker3_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("update-drinker")))
-  )
-  private[this] lazy val controllers_Application_updateDrinker3_invoker = createInvoker(
-    Application_1.updateDrinker(),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.Application",
-      "updateDrinker",
-      Nil,
-      "POST",
-      this.prefix + """update-drinker""",
-      """""",
-      Seq()
-    )
-  )
-
   // @LINE:11
-  private[this] lazy val controllers_Assets_at4_route = Route("GET",
+  private[this] lazy val controllers_Assets_at1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at4_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at1_invoker = createInvoker(
     Assets_0.at(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -151,28 +94,10 @@ class Routes(
         controllers_Application_index0_invoker.call(Application_1.index())
       }
   
-    // @LINE:6
-    case controllers_Application_viewDrinker1_route(params) =>
-      call(params.fromPath[String]("name", None)) { (name) =>
-        controllers_Application_viewDrinker1_invoker.call(Application_1.viewDrinker(name))
-      }
-  
-    // @LINE:7
-    case controllers_Application_editDrinker2_route(params) =>
-      call(params.fromPath[String]("name", None)) { (name) =>
-        controllers_Application_editDrinker2_invoker.call(Application_1.editDrinker(name))
-      }
-  
-    // @LINE:8
-    case controllers_Application_updateDrinker3_route(params) =>
-      call { 
-        controllers_Application_updateDrinker3_invoker.call(Application_1.updateDrinker())
-      }
-  
     // @LINE:11
-    case controllers_Assets_at4_route(params) =>
+    case controllers_Assets_at1_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at4_invoker.call(Assets_0.at(path, file))
+        controllers_Assets_at1_invoker.call(Assets_0.at(path, file))
       }
   }
 }
