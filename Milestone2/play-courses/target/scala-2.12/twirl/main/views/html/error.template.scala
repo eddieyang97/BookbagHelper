@@ -52,8 +52,8 @@ Seq[Any](format.raw/*1.19*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 08 18:52:19 EST 2018
-                  SOURCE: /vagrant/play-beers/app/views/error.scala.html
+                  DATE: Thu Nov 29 20:45:37 EST 2018
+                  SOURCE: /vagrant/316Proj/Milestone2/play-courses/app/views/error.scala.html
                   HASH: 83adfc400caf2459e1a0049272fbc4bc43db3952
                   MATRIX: 948->1|1060->18|1088->21|1109->34|1148->36|1168->38|1207->40|1236->43|1265->47|1292->54|1350->86|1364->92|1404->112|1458->137
                   LINES: 28->1|33->1|35->3|35->3|35->3|35->3|35->3|36->4|36->4|36->4|37->5|37->5|37->5|38->6

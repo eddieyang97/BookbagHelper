@@ -20,19 +20,19 @@ public class Application extends Controller {
     private models.CourseDB courseDB;
 
     public Result index() throws SQLException {
-        return ok(index.render(courseDB.getAllCourseNames()));
+        return ok(index.render(courseDB.getAllProfessorNames()));
     }
 
-    /*
-    public Result viewDrinker(String name) throws SQLException {
-        BeerDB.DrinkerInfo drinkerInfo = beerDB.getDrinkerInfo(name);
-        if (drinkerInfo == null) {
-            return ok(error.render("No drinker named \"" + name + "\""));
+    public Result viewProfessor(String name) throws SQLException {
+        CourseDB.ProfessorInfo professorInfo = courseDB.getProfessorInfo(name);
+        if (professorInfo == null) {
+            return ok(error.render("No professor named \"" + name + "\""));
         } else{
-            return ok(drinker.render(drinkerInfo));
+            return ok(professor.render(professorInfo));
         }
     }
 
+    /*
     public Result editDrinker(String name) throws SQLException {
         BeerDB.DrinkerInfo drinkerInfo = beerDB.getDrinkerInfo(name);
         if (drinkerInfo == null) {
