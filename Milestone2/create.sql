@@ -6,7 +6,7 @@ CREATE TABLE Course
 CREATE TABLE Crosslisting
 (course_number VARCHAR(128) NOT NULL REFERENCES Course(course_number),
  course_number_secondary VARCHAR(128) NOT NULL PRIMARY KEY
-)
+);
 
 CREATE TABLE Professor
 (name VARCHAR(64) NOT NULL PRIMARY KEY,
