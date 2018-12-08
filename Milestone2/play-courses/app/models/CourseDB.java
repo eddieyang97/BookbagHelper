@@ -81,8 +81,8 @@ public class CourseDB {
         try {
             connection = db.getConnection();
             PreparedStatement statement = connection
-                .prepareStatement("SELECT name FROM professor WHERE name = ?");
-            statement.setString(1, subname);
+                .prepareStatement("SELECT name FROM professor WHERE name LIKE ?");
+            statement.setString(1, "%" + subname + "%");
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 String name = rs.getString(1);
