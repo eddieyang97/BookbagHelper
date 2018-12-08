@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/vagrant/316Proj/Milestone2/play-courses/conf/routes
-// @DATE:Thu Nov 29 21:45:26 EST 2018
+// @DATE:Sat Dec 08 16:45:16 EST 2018
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:5
   Application_1: controllers.Application,
-  // @LINE:9
+  // @LINE:10
   Assets_0: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -26,7 +26,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:5
     Application_1: controllers.Application,
-    // @LINE:9
+    // @LINE:10
     Assets_0: controllers.Assets
   ) = this(errorHandler, Application_1, Assets_0, "/")
 
@@ -42,6 +42,7 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.Application.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """professor/""" + "$" + """name<[^/]+>""", """controllers.Application.viewProfessor(name:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search-professor""", """controllers.Application.searchProfessor()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -86,11 +87,29 @@ class Routes(
     )
   )
 
-  // @LINE:9
-  private[this] lazy val controllers_Assets_at2_route = Route("GET",
+  // @LINE:7
+  private[this] lazy val controllers_Application_searchProfessor2_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("search-professor")))
+  )
+  private[this] lazy val controllers_Application_searchProfessor2_invoker = createInvoker(
+    Application_1.searchProfessor(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.Application",
+      "searchProfessor",
+      Nil,
+      "POST",
+      this.prefix + """search-professor""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:10
+  private[this] lazy val controllers_Assets_at3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at2_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at3_invoker = createInvoker(
     Assets_0.at(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -119,10 +138,16 @@ class Routes(
         controllers_Application_viewProfessor1_invoker.call(Application_1.viewProfessor(name))
       }
   
-    // @LINE:9
-    case controllers_Assets_at2_route(params) =>
+    // @LINE:7
+    case controllers_Application_searchProfessor2_route(params) =>
+      call { 
+        controllers_Application_searchProfessor2_invoker.call(Application_1.searchProfessor())
+      }
+  
+    // @LINE:10
+    case controllers_Assets_at3_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at2_invoker.call(Assets_0.at(path, file))
+        controllers_Assets_at3_invoker.call(Assets_0.at(path, file))
       }
   }
 }

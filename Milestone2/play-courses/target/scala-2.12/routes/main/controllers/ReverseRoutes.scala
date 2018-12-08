@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/vagrant/316Proj/Milestone2/play-courses/conf/routes
-// @DATE:Thu Nov 29 21:45:26 EST 2018
+// @DATE:Sat Dec 08 16:45:16 EST 2018
 
 import play.api.mvc.Call
 
@@ -12,14 +12,14 @@ import _root_.play.libs.F
 // @LINE:5
 package controllers {
 
-  // @LINE:9
+  // @LINE:10
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:9
+    // @LINE:10
     def at(file:String): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))
@@ -33,6 +33,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:7
+    def searchProfessor(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "search-professor")
+    }
   
     // @LINE:5
     def index(): Call = {

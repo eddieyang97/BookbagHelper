@@ -20,7 +20,7 @@ public class Application extends Controller {
     private models.CourseDB courseDB;
 
     public Result index() throws SQLException {
-        return ok(index.render(courseDB.getAllProfessorNames()));
+        return ok(index.render());
     }
 
     public Result viewProfessor(String name) throws SQLException {
@@ -32,6 +32,15 @@ public class Application extends Controller {
         }
     }
 
+    public Result searchProfessor() throws SQLException {
+        Map<String, String> data = formFactory.form().bindFromRequest().data();
+        String name = data.get("professor");
+        if (name == null) {
+            return ok(error.render("Invalid Professor Name")); 
+        }
+        ArrayList<String> names = courseDB.getAllMatchedProfessors(name);
+        return ok(search.render(names));
+    }
     /*
     public Result editDrinker(String name) throws SQLException {
         BeerDB.DrinkerInfo drinkerInfo = beerDB.getDrinkerInfo(name);

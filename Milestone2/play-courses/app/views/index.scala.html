@@ -1,11 +1,8 @@
-@(professors: List[String])
-
-@main("All Professors") { } {
-  <p>Click on professor below to view more information:
-    <ul>
-      @for(name <- professors) {
-        <li><a href="@routes.Application.viewProfessor(name)">@name</a></li>
-      }
-    </ul>
-  </p>
+@main("Search for professor: ") { } {
+<form method="post" action="@routes.Application.searchProfessor()">
+@helper.CSRF.formField
+Name: <input type="text" name="professor" value=" "
+                    size="30" maxlength="30"/><br/>
+<input type="submit" value="Submit"/>
+</form>
 }

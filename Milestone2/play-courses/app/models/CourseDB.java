@@ -75,7 +75,32 @@ public class CourseDB {
         return getAllNames("Course");
     }
 
-    
+    public ArrayList<String> getAllMatchedProfessors(String subname) throws SQLException {
+        Connection connection = null;
+        ArrayList<String> names = new ArrayList<String>();
+        try {
+            connection = db.getConnection();
+            PreparedStatement statement = connection
+                .prepareStatement("SELECT name FROM professor WHERE name = ?");
+            statement.setString(1, subname);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                String name = rs.getString(1);
+                names.add(name);
+            }
+            rs.close();
+            statement.close();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (Exception e) {
+                }
+            }
+        }
+        return names;
+    }
+
     public ProfessorInfo getProfessorInfo(String name) throws SQLException {
         Connection connection = null;
         ProfessorInfo professorInfo = null;
