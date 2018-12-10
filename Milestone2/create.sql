@@ -3,12 +3,6 @@ CREATE TABLE Course
  course_number VARCHAR(128) NOT NULL
 );
 
-/*
-CREATE TABLE Crosslisting
-(course_number VARCHAR(128) NOT NULL REFERENCES Course(course_number),
- course_number_secondary VARCHAR(128) NOT NULL PRIMARY KEY
-);*/
-
 CREATE TABLE Professor
 (name VARCHAR(64) NOT NULL PRIMARY KEY,
  gender VARCHAR(64),
@@ -32,17 +26,20 @@ CREATE TABLE Comment
  PRIMARY KEY(pairingID, comment)
 );
 
-INSERT INTO Course VALUES ('Modern Chinese Culture', 'CHINESE 455');
-INSERT INTO Course VALUES ('Chinese Society', 'CHINESE 456');
---INSERT INTO Crosslisting VALUES ('CHINESE 456', 'AMES 456');
-INSERT INTO Professor VALUES ('Kang Liu', 'Male', 3.5, 1.7, 3);
-INSERT INTO Professor VALUES ('Tang Liu', 'Male', 3, 2, 3);
-INSERT INTO Professor VALUES('Owen Astrachan', 'Male', 4.0, 2.5, 7);
-INSERT INTO Professor VALUES('Carlo Tomasi', 'Male', 4.5, 3.1, 7);
-INSERT INTO Teaches VALUES('Kang Liu', NULL, '2018F', 'Modern Chinese Culture', '00001');
-INSERT INTO Teaches VALUES('Kang Liu', NULL, '2018S', 'Chinese Society', '00002');
-INSERT INTO Comment VALUEs('00001', 'Very interesting course. Learned a lot. Decent Workload.');
-INSERT INTO Comment VALUEs('00001', 'I liked it a lot. The weekly assignments are interesting and the projects
-are fun as well');
-INSERT INTO Comment VALUEs('00002', 'A little hard; one essay every week; Prof. Liu is a great lecturer
-though.');
+/*CREATE FUNCTION UpdateCommentNumber() RETURNS TRIGGER AS $$
+BEGIN
+  IF (TG_TABLE_NAME = 'broker' AND (NEW.ssn IN (SELECT ssn FROM Owns))) THEN
+    RAISE EXCEPTION 'Account owners cannot be brokers';
+  ELSIF (TG_TABLE_NAME = 'owns' AND (NEW.ssn IN (SELECT ssn FROM Broker))) THEN
+    RAISE EXCEPTION 'Brokers cannot own accounts';
+  END IF;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER TG_BrokerNotAccountOwner_Broker
+  BEFORE INSERT ON Comment
+  -- note that DELETE won't cause a violation
+  FOR EACH ROW
+  EXECUTE PROCEDURE UpdateCommentNumber();
+*/
