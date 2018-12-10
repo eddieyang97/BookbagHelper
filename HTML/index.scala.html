@@ -1,0 +1,17 @@
+@main("Search for professor: ") { } {
+<form method="post" action="@routes.Application.searchProfessor()">
+@helper.CSRF.formField
+Name: <input type="text" name="professor" value=""
+                    size="30" maxlength="30"/><br/>
+<input type="submit" value="Submit"/>
+</form>
+}
+
+@main("Search for course: ") { } {
+<form method="post" action="@routes.Application.searchCourse()">
+@helper.CSRF.formField
+Name: <input type="text" name="course" value=""
+                    size="30" maxlength="30"/><br/>
+<input type="submit" value="Submit"/>
+</form>
+}
