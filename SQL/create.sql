@@ -22,24 +22,21 @@ CREATE TABLE Teaches
 
 CREATE TABLE Comment
 (pairingID VARCHAR(32) NOT NULL REFERENCES Teaches(pairingID),
- comment VARCHAR(1024) NOT NULL,
+ comment VARCHAR(2048) NOT NULL,
  PRIMARY KEY(pairingID, comment)
 );
 
-/*CREATE FUNCTION UpdateCommentNumber() RETURNS TRIGGER AS $$
+CREATE FUNCTION UpdateCommentNumber() RETURNS TRIGGER AS $$
 BEGIN
-  IF (TG_TABLE_NAME = 'broker' AND (NEW.ssn IN (SELECT ssn FROM Owns))) THEN
-    RAISE EXCEPTION 'Account owners cannot be brokers';
-  ELSIF (TG_TABLE_NAME = 'owns' AND (NEW.ssn IN (SELECT ssn FROM Broker))) THEN
-    RAISE EXCEPTION 'Brokers cannot own accounts';
-  END IF;
+  UPDATE Professor
+  SET number_of_reviews = number_of_reviews + 1
+  WHERE name = (SELECT prof_name FROM Teaches t WHERE t.pairingID = NEW.pairingID)
+        OR name = (SELECT sec_prof_name FROM Teaches t WHERE t.pairingID = NEW.pairingID);
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
 CREATE TRIGGER TG_BrokerNotAccountOwner_Broker
   BEFORE INSERT ON Comment
-  -- note that DELETE won't cause a violation
   FOR EACH ROW
   EXECUTE PROCEDURE UpdateCommentNumber();
-*/

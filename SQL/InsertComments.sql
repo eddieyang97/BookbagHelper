@@ -1,4 +1,3 @@
-INSERT INTO Comment VALUEs('Pairing Id', 'Comment ' );
 INSERT INTO Comment VALUEs('1', 'Two papers and two midterms; midterms are pretty straightforward with T/F and short answer questions; however, they require detailed notes from class; grading on papers is pretty random, depending on your TA. ' );
 INSERT INTO Comment VALUEs('2', 'Class - favorite class at Duke so far, very interesting overview of a vast period of history (empires), Prof - favorite professor, amazing lecturer ' );
 INSERT INTO Comment VALUEs('3', 'This class has lots of readings and assignments in different forms. You explore topics related to race and you''ll think about things that you''ve never thought of before. Has NS code!! ' );

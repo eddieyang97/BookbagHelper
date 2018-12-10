@@ -26,7 +26,6 @@ INSERT INTO Professor VALUES ('Alexander Watson', 'Male',3,4,0,'https://math.duk
 INSERT INTO Professor VALUES ('Alexandra Beolke', 'Male',NULL,NULL,0);
 INSERT INTO Professor VALUES ('Alfred Goshaw', 'Male',3.9,2.9,0,'https://phy.duke.edu/people/alfred-t-goshaw');
 INSERT INTO Professor VALUES ('Alison Hill', 'Female',3.5,3,0,'https://biology.duke.edu/people/alison-hill');
-INSERT INTO Professor VALUES ('Allen Buchanan', 'Male',4,3.3,0,'https://philosophy.duke.edu/people/allen-edward-buchanan');
 INSERT INTO Professor VALUES ('Alma Blount', 'Female',4.1,3.6,0,'https://hart.sanford.duke.edu/story/alma-blount/');
 INSERT INTO Professor VALUES ('Alma Coefman', 'Female',4.2,2.3,0,'https://romancestudies.duke.edu/people/profile/alma-coefman');
 INSERT INTO Professor VALUES ('Alvin Crumbliss', 'Male',3.7,3.1,0,'https://chem.duke.edu/faculty/alvin-l-crumbliss');
