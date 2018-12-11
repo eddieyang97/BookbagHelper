@@ -1,6 +1,11 @@
 @(searchedName:String, professors: List[models.CourseDB.ProfessorInfo])
 
 @main("All Matched Professors for " + searchedName) { } {
+  <p>
+  <a href="@routes.Application.index()">Back to Main Page</a>
+  </p>
+  <p>Click on professor below to view more information:
+  </p>
 	<table>
 		<tr>
   			<th><a href="@routes.Application.searchProfessorSortByName(searchedName)">Name</a></th>

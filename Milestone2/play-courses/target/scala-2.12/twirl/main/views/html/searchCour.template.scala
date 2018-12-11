@@ -33,13 +33,15 @@ object searchCour extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api
 Seq[Any](format.raw/*1.45*/("""
 
 """),_display_(/*3.2*/main("All Matched Courses")/*3.29*/ {_display_(Seq[Any](format.raw/*3.31*/(""" """)))}/*3.33*/ {_display_(Seq[Any](format.raw/*3.35*/("""
-  """),format.raw/*4.3*/("""<p>Click on course below to view more information:
+  """),format.raw/*4.3*/("""<p>
+  <a href=""""),_display_(/*5.13*/routes/*5.19*/.Application.index()),format.raw/*5.39*/("""">Back to Main Page</a>
+  </p>
+  <p>Click on course below to view more information:
     <ul>
-      """),_display_(/*6.8*/for(course <- courses) yield /*6.30*/ {_display_(Seq[Any](format.raw/*6.32*/("""
-        """),format.raw/*7.9*/("""<li><a href=""""),_display_(/*7.23*/routes/*7.29*/.Application.viewCourse(course.name)),format.raw/*7.65*/("""">"""),_display_(/*7.68*/course/*7.74*/.courseNumber),format.raw/*7.87*/(""" """),format.raw/*7.88*/(""": """),_display_(/*7.91*/course/*7.97*/.name),format.raw/*7.102*/("""</a></li>
-      """)))}),format.raw/*8.8*/("""
-    """),format.raw/*9.5*/("""</ul>
-    <a href=""""),_display_(/*10.15*/routes/*10.21*/.Application.index()),format.raw/*10.41*/("""">Back to Main Page</a>
+      """),_display_(/*9.8*/for(course <- courses) yield /*9.30*/ {_display_(Seq[Any](format.raw/*9.32*/("""
+        """),format.raw/*10.9*/("""<li><a href=""""),_display_(/*10.23*/routes/*10.29*/.Application.viewCourse(course.name)),format.raw/*10.65*/("""">"""),_display_(/*10.68*/course/*10.74*/.courseNumber),format.raw/*10.87*/(""" """),format.raw/*10.88*/(""": """),_display_(/*10.91*/course/*10.97*/.name),format.raw/*10.102*/("""</a></li>
+      """)))}),format.raw/*11.8*/("""
+    """),format.raw/*12.5*/("""</ul>
   </p>
 """)))}))
       }
@@ -57,11 +59,11 @@ Seq[Any](format.raw/*1.45*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Dec 10 22:54:45 EST 2018
+                  DATE: Tue Dec 11 13:48:21 EST 2018
                   SOURCE: /vagrant/316Proj/Milestone2/play-courses/app/views/searchCour.scala.html
-                  HASH: 278074390a5a1a014492c106f5484ec074d190be
-                  MATRIX: 979->1|1117->44|1145->47|1180->74|1219->76|1239->78|1278->80|1307->83|1399->150|1436->172|1475->174|1510->183|1550->197|1564->203|1620->239|1649->242|1663->248|1696->261|1724->262|1753->265|1767->271|1793->276|1839->293|1870->298|1917->318|1932->324|1973->344
-                  LINES: 28->1|33->1|35->3|35->3|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|39->7|39->7|39->7|39->7|39->7|39->7|39->7|39->7|39->7|39->7|40->8|41->9|42->10|42->10|42->10
+                  HASH: 2f0e18540cbaa88a670813e434262d66b7829e36
+                  MATRIX: 979->1|1117->44|1145->47|1180->74|1219->76|1239->78|1278->80|1307->83|1349->99|1363->105|1403->125|1528->225|1565->247|1604->249|1640->258|1681->272|1696->278|1753->314|1783->317|1798->323|1832->336|1861->337|1891->340|1906->346|1933->351|1980->368|2012->373
+                  LINES: 28->1|33->1|35->3|35->3|35->3|35->3|35->3|36->4|37->5|37->5|37->5|41->9|41->9|41->9|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|42->10|43->11|44->12
                   -- GENERATED --
               */
           
