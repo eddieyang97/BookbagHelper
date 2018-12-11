@@ -1,4 +1,4 @@
-[0m[[0mdebug[0m] [0m[naha] Invalidating /vagrant/316Proj/Milestone2/play-courses/target/scala-2.12/classes/models/CourseDB.class: stamp changed from lastModified(1544500644000) to lastModified(1544501017000)[0m
+[0m[[0mdebug[0m] [0m[naha] Invalidating /vagrant/316Proj/Milestone2/play-courses/target/scala-2.12/classes/models/CourseDB.class: stamp changed from lastModified(1544501018000) to lastModified(1544501267000)[0m
 [0m[[0mdebug[0m] [0m[naha] [0m
 [0m[[0mdebug[0m] [0m[naha] Initial source changes: [0m
 [0m[[0mdebug[0m] [0m[naha] 	removed:Set()[0m
@@ -16,10 +16,10 @@
 [0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/vagrant/316Proj/Milestone2/play-courses/app/models/CourseDB.java)[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set(/vagrant/316Proj/Milestone2/play-courses/app/models/CourseDB.java)[0m
 [0m[[0minfo[0m] [0mCompiling 1 Java source to /vagrant/316Proj/Milestone2/play-courses/target/scala-2.12/classes...[0m
-[0m[[0mdebug[0m] [0mAttempting to call com.sun.tools.javac.api.JavacTool@e72b582 directly...[0m
-[0m[[0mdebug[0m] [0mJava compilation took 0.140558744 s[0m
-[0m[[0mdebug[0m] [0mJava analysis took 0.067162163 s[0m
-[0m[[0mdebug[0m] [0mJava compile + analysis took 0.244269724 s[0m
+[0m[[0mdebug[0m] [0mAttempting to call com.sun.tools.javac.api.JavacTool@6b47e572 directly...[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.240212193 s[0m
+[0m[[0mdebug[0m] [0mJava analysis took 0.064904259 s[0m
+[0m[[0mdebug[0m] [0mJava compile + analysis took 0.342626511 s[0m
 [0m[[0mdebug[0m] [0m[naha] New invalidations:[0m
 [0m[[0mdebug[0m] [0m[naha] 	Set()[0m
 [0m[[0mdebug[0m] [0m[naha] Initial set of included nodes: Set()[0m
