@@ -1,0 +1,27 @@
+﻿Eddie Yang: 
+1. database overall design and implementation
+2. cleaning up the dataset from the excel file
+3. html and css for the web app
+4. Java play debugging and refactoring
+Since the last milestone: mostly 3 and 4.
+
+
+Frank Yin:
+1. database design (ER diagram, SQL) 
+2. website application development 
+3. html functionality (interaction with Java and display database info) 
+4. Java Play frame development, database protection, database connection (Application.java, CourseDB.java, other scala.html files and conf files)
+Since the last milestone: 2,3,4
+
+Frank Qu
+1. Database cleaning
+2. Database insertion 
+3. Html file coding
+4. Milestones, final report editing
+5. Java play coding.
+Since the last milestone: 2,3,4
+
+
+Jack Claar
+1. Database cleaning
+2. Processing deign
