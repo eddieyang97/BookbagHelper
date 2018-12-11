@@ -31,7 +31,7 @@ BEGIN
   UPDATE Professor
   SET number_of_reviews = number_of_reviews + 1
   WHERE name = (SELECT prof_name FROM Teaches t WHERE t.pairingID = NEW.pairingID)
-        OR name = (SELECT sec_prof_name FROM Teaches t WHERE t.pairingID = NEW.pairingID);
+     OR name = (SELECT sec_prof_name FROM Teaches t WHERE t.pairingID = NEW.pairingID);
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
