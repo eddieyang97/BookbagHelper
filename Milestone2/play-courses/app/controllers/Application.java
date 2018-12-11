@@ -32,14 +32,130 @@ public class Application extends Controller {
         }
     }
 
+    public Result viewCourse(String name) throws SQLException {
+        CourseDB.CourseInfo courseInfo = courseDB.getCourseInfo(name);
+        if (courseInfo == null) {
+            return ok(error.render("No course named \"" + name + "\""));
+        } else{
+            return ok(course.render(courseInfo));
+        }
+    }
+
+    public Result viewCommentsFilteredByProfessorAndCourse(String prof_name, String course_name) throws SQLException {
+        ArrayList<CourseDB.CommentInfo> commentsInfo = courseDB.getCommentsInfo(prof_name, course_name);
+        if (commentsInfo == null) {
+            return ok(error.render("No comments found for the course \"" + course_name + "\"" + "taught by \"" + prof_name));
+        } else {
+            return ok(comments.render(commentsInfo));
+        }
+    }
+
+    public Result viewCommentsFilteredByProfessor(String prof_name) throws SQLException {
+        ArrayList<CourseDB.CommentInfo> commentsInfo = courseDB.getCommentsInfoByProf(prof_name);
+        if (commentsInfo == null) {
+            return ok(error.render("No comments found for the professor \"" + prof_name));
+        } else {
+            return ok(comments.render(commentsInfo));
+        }
+    }
+
+    public Result viewCommentsFilteredByCourse(String course_name) throws SQLException {
+        ArrayList<CourseDB.CommentInfo> commentsInfo = courseDB.getCommentsInfoByCourse(course_name);
+        if (commentsInfo == null) {
+            return ok(error.render("No comments found for the course \"" + course_name));
+        } else {
+            return ok(comments.render(commentsInfo));
+        }
+    }
+
+    public Result viewCommentsFilteredByCourseAndSemester(String course_name, String semester) throws SQLException {
+        ArrayList<CourseDB.CommentInfo> commentsInfo = courseDB.getCommentsInfoByCourseAndSemester(course_name, semester);
+        if (commentsInfo == null) {
+            return ok(error.render("No comments found for the course \"" + course_name + "\"" + "offered in \"" + semester));
+        } else {
+            return ok(comments.render(commentsInfo));
+        }
+    }
+
     public Result searchProfessor() throws SQLException {
         Map<String, String> data = formFactory.form().bindFromRequest().data();
         String name = data.get("professor");
-        if (name == null) {
-            return ok(error.render("Invalid Professor Name")); 
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllMatchedProfessors(name);
+        return ok(searchProf.render(name, profs));
+    }
+
+    public Result searchAllProfessor() throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllMatchedProfessors("");
+        return ok(searchAllProf.render(profs));
+    }
+
+    public Result searchAllCourse() throws SQLException {
+        ArrayList<String> names = courseDB.getAllMatchedCourses("");
+        return ok(searchCour.render(names));
+    }
+
+    public Result searchProfessorSortByName(String name) throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllMatchedProfessorsSortByName(name);
+        if (profs == null) {
+            return ok(error.render("Invalid Professor Info"));
+        } else {
+            return ok(searchProf.render(name, profs));
         }
-        ArrayList<String> names = courseDB.getAllMatchedProfessors(name);
-        return ok(search.render(names));
+    }
+
+    public Result searchAllProfessorSortByName() throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllProfessorsSortByName();
+        if (profs == null) {
+            return ok(error.render("Invalid Professor Info"));
+        } else {
+            return ok(searchAllProf.render(profs));
+        }
+    }
+    
+    public Result searchAllProfessorSortByQuality() throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllProfessorsSortByQuality();
+        if (profs == null) {
+            return ok(error.render("Invalid Professor Info"));
+        } else {
+            return ok(searchAllProf.render(profs));
+        }
+    }
+
+    public Result searchAllProfessorSortByDifficulty() throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllProfessorsSortByDifficulty();
+        if (profs == null) {
+            return ok(error.render("Invalid Professor Info"));
+        } else {
+            return ok(searchAllProf.render(profs));
+        }
+    }
+
+    public Result searchProfessorSortByQuality(String name) throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllMatchedProfessorsSortByQuality(name);
+        if (profs == null) {
+            return ok(error.render("Invalid Professor Info"));
+        } else {
+            return ok(searchProf.render(name, profs));
+        }
+    }
+
+    public Result searchProfessorSortByDifficulty(String name) throws SQLException {
+        ArrayList<CourseDB.ProfessorInfo> profs = courseDB.getAllMatchedProfessorsSortByDifficulty(name);
+        if (profs == null) {
+            return ok(error.render("Invalid Professor Info"));
+        } else {
+            return ok(searchProf.render(name, profs));
+        }
+    }
+    
+    public Result searchCourse() throws SQLException {
+        Map<String, String> data = formFactory.form().bindFromRequest().data();
+        String name = data.get("course");
+        if (name == null) {
+            return ok(error.render("Invalid Course Name")); 
+        }
+        ArrayList<String> names = courseDB.getAllMatchedCourses(name);
+        return ok(searchCour.render(names));
     }
     /*
     public Result editDrinker(String name) throws SQLException {

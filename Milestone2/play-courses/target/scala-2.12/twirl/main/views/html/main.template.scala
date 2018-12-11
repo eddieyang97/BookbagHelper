@@ -45,10 +45,9 @@ Seq[Any](format.raw/*1.48*/("""
     """),_display_(/*13.6*/script),format.raw/*13.12*/("""
   """),format.raw/*14.3*/("""</head>
   <body>
-    <h1><img src=""""),_display_(/*16.20*/routes/*16.26*/.Assets.at("images/favicon.png")),format.raw/*16.58*/("""" style="float:right"/>Play/Java DB-Courses at Duke University</h1>
     <hr/>
-    <h2 id="heading">"""),_display_(/*18.23*/heading),format.raw/*18.30*/("""</h2>
-    <div id="content">"""),_display_(/*19.24*/content),format.raw/*19.31*/("""</div>
+    <h2 id="heading">"""),_display_(/*17.23*/heading),format.raw/*17.30*/("""</h2>
+    <div id="content">"""),_display_(/*18.24*/content),format.raw/*18.31*/("""</div>
     <hr/>
   </body>
 </html>"""))
@@ -67,11 +66,11 @@ Seq[Any](format.raw/*1.48*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Nov 29 20:45:37 EST 2018
+                  DATE: Mon Dec 10 18:57:48 EST 2018
                   SOURCE: /vagrant/316Proj/Milestone2/play-courses/app/views/main.scala.html
-                  HASH: e416e96e2d91931e4b184104421382a28f2f8a42
-                  MATRIX: 957->1|1098->47|1126->49|1693->589|1708->595|1763->629|1829->669|1856->675|1886->678|1949->714|1964->720|2017->752|2144->852|2172->859|2228->888|2256->895
-                  LINES: 28->1|33->1|35->3|44->12|44->12|44->12|45->13|45->13|46->14|48->16|48->16|48->16|50->18|50->18|51->19|51->19
+                  HASH: 9de309d337d1616cbf7915a474e80fc282940d91
+                  MATRIX: 957->1|1098->47|1126->49|1693->589|1708->595|1763->629|1829->669|1856->675|1886->678|1962->727|1990->734|2046->763|2074->770
+                  LINES: 28->1|33->1|35->3|44->12|44->12|44->12|45->13|45->13|46->14|49->17|49->17|50->18|50->18
                   -- GENERATED --
               */
           

@@ -1,0 +1,13 @@
+@(courseInfo: models.CourseDB.CourseInfo)
+
+@main("Course Information: " + courseInfo.name) { } {
+  <p>
+    Course Number: @courseInfo.courseNumber<br/>
+    <ul>
+      @for(prof_name <- courseInfo.taughtBy) {
+        <li><a href="@routes.Application.viewProfessor(prof_name)">@prof_name</a>, <a href="@routes.Application.viewCommentsFilteredByProfessorAndCourse(prof_name, courseInfo.name)">associated comments</a></li>
+      }
+    </ul>
+  </p>
+  <a href="@routes.Application.index()">Back to Main Page</a>
+}

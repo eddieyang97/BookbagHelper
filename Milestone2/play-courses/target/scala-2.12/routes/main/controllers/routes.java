@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/vagrant/316Proj/Milestone2/play-courses/conf/routes
-// @DATE:Sat Dec 08 16:45:16 EST 2018
+// @DATE:Mon Dec 10 17:50:54 EST 2018
 
 package controllers;
 

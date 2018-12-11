@@ -1,0 +1,12 @@
+@(courses: List[String])
+
+@main("All Matched Courses") { } {
+  <p>Click on course below to view more information:
+    <ul>
+      @for(name <- courses) {
+        <li><a href="@routes.Application.viewCourse(name)">@name</a></li>
+      }
+    </ul>
+    <a href="@routes.Application.index()">Back to Main Page</a>
+  </p>
+}

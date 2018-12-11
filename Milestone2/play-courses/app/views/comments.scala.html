@@ -1,0 +1,14 @@
+@(comments: List[models.CourseDB.CommentInfo])
+
+@main("All Filtered Comments") { } {
+  <p>
+     @for(comment <- comments) {
+        Professor Name: @comment.profName</br>
+        Second Professor Name: @comment.secProfName</br>
+        Semester: @comment.semester</br>
+        Course Name: @comment.courseName</br>
+        Comment Content: @comment.comment</br>
+        </br>
+     }
+  </p>
+}

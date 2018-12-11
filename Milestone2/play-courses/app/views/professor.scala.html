@@ -2,12 +2,20 @@
 
 @main("Professor Information: " + professorInfo.name) { } {
   <p>
-    Gender: @professorInfo.gender<br/>
-    Quality Rating: @professorInfo.quality<br/>
-    Difficulty Rating: @professorInfo.difficulty<br/>
-    Number of Reviews: @professorInfo.numberOfReviews<br/>
-    Url: @professorInfo.url<br/>
-    <a href="@routes.Application.index()">all professors</a>.
-    <a href="https://users.cs.duke.edu/~junyang/">hyperline</a>
+  	<ul>
+    	<li>Gender: @professorInfo.gender</li>
+    	<li>Quality Rating: @professorInfo.quality</li>
+    	<li>Difficulty Rating: @professorInfo.difficulty</li>
+    	<li>Number of Reviews: @professorInfo.numberOfReviews</li>
+    	<li>Url: <a href=@professorInfo.url>@professorInfo.name's Bio</a></li>
+    </ul>
+    <br/>
+    Courses Taught: <br/>
+    	<ol>
+    		@for(course <- professorInfo.teaches) {
+        		<li><a href="@routes.Application.viewCommentsFilteredByProfessorAndCourse(professorInfo.name, course)">@course</a></br></li>
+     		}
+     	</ol>
   </p>
+  <a href="@routes.Application.index()">Back to Main Page</a>
 }
