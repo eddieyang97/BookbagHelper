@@ -3,12 +3,15 @@
 @main("All Filtered Comments") { } {
   <p>
      @for(comment <- comments) {
-        Professor Name: @comment.profName</br>
-        Second Professor Name: @comment.secProfName</br>
-        Semester: @comment.semester</br>
-        Course Name: @comment.courseName</br>
-        Comment Content: @comment.comment</br>
-        </br>
+        <hr/>
+        <ul>
+          <li>Professor Name: @comment.profName</li>
+          <li>Second Professor Name: @comment.secProfName</li>
+          <li>Semester: @comment.semester</li>
+          <li>Course Name: @comment.courseName</li>
+          <li>Comment Content: @comment.comment</li>
+        </ul>
+        <hr/>
      }
   </p>
 }

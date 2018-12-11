@@ -1,15 +1,14 @@
 body{
-	background: url(bg.jpg);
-	margin:0;
-  background-size: 800px;
+	background-image: url('@routes.Assets.at("images/bg.jpg")');
 }
+
 .title{
-	width: 400px;
 	color: #000080;
 	font-size: 24px;
 	text-decoration: underline;
 	padding-left: 10px;
 }
+
 .icon{
 	float: left;
 	width: 36px;
