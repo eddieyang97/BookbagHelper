@@ -1,5 +1,5 @@
 body{
-	background: url('bg.jpg');
+	background-image: url('@routes.Assets.at("images/bg.jpg")');
 }
 
 .title{

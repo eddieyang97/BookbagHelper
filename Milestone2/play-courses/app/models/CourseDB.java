@@ -367,18 +367,21 @@ public class CourseDB {
         return profs;
     }
 
-    public ArrayList<String> getAllMatchedCourses(String subname) throws SQLException {
+    public ArrayList<CourseInfo> getAllMatchedCourses(String subname) throws SQLException {
         Connection connection = null;
-        ArrayList<String> names = new ArrayList<String>();
+        ArrayList<CourseInfo> courses = new ArrayList<CourseInfo>();
         try {
             connection = db.getConnection();
             PreparedStatement statement = connection
-                .prepareStatement("SELECT name FROM course WHERE UPPER(name) LIKE UPPER(?)");
+                .prepareStatement("SELECT name, course_number FROM course WHERE UPPER(name) LIKE UPPER(?) OR UPPER(course_number) LIKE UPPER(?)");
             statement.setString(1, "%" + subname + "%");
+            statement.setString(2, "%" + subname + "%");
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 String name = rs.getString(1);
-                names.add(name);
+                String course_number = rs.getString(2);
+                CourseInfo course = new CourseInfo(name, course_number, null);
+                courses.add(course);
             }
             rs.close();
             statement.close();
@@ -390,7 +393,7 @@ public class CourseDB {
                 }
             }
         }
-        return names;
+        return courses;
     }
 
     public ProfessorInfo getProfessorInfo(String name) throws SQLException {

@@ -90,8 +90,8 @@ public class Application extends Controller {
     }
 
     public Result searchAllCourse() throws SQLException {
-        ArrayList<String> names = courseDB.getAllMatchedCourses("");
-        return ok(searchCour.render(names));
+        ArrayList<CourseDB.CourseInfo> courses = courseDB.getAllMatchedCourses("");
+        return ok(searchCour.render(courses));
     }
 
     public Result searchProfessorSortByName(String name) throws SQLException {
@@ -154,8 +154,8 @@ public class Application extends Controller {
         if (name == null) {
             return ok(error.render("Invalid Course Name")); 
         }
-        ArrayList<String> names = courseDB.getAllMatchedCourses(name);
-        return ok(searchCour.render(names));
+        ArrayList<CourseDB.CourseInfo> courses = courseDB.getAllMatchedCourses(name);
+        return ok(searchCour.render(courses));
     }
     /*
     public Result editDrinker(String name) throws SQLException {
