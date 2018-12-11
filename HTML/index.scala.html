@@ -1,0 +1,29 @@
+<head>
+  <title>Bookbag Helper</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body background="bg.jpg" class = "background">
+  <div id="u1" class="header">
+      <h1>Bookbag Helper</h1>
+  </div>
+  <div class = "search_bar">
+    @main("Search for professor: ") { } {
+    <form method="post" action="@routes.Application.searchProfessor()">
+    @helper.CSRF.formField
+    Name: <input type="text" name="professor" value=""
+                        size="30" maxlength="30"/><br/>
+    <input type="submit" value="Submit"/>
+    </form>
+    }
+  </div>
+  <div class = "search_bar">
+    @main("Search for course: ") { } {
+    <form method="post" action="@routes.Application.searchCourse()">
+    @helper.CSRF.formField
+    Name: <input type="text" name="course" value=""
+                        size="30" maxlength="30"/><br/>
+    <input type="submit" value="Submit"/>
+    </form>
+    }
+  </div>
+</body>
