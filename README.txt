@@ -1,1 +1,1 @@
-To create the database, run the file create.sql. 4 tables (Course, Professor, Teaches, and Comment) will be created and populated with sample entries.
+Files for grading can be found under the folder Final Submission.
