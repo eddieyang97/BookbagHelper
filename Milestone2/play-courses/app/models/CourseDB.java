@@ -373,9 +373,9 @@ public class CourseDB {
         try {
             connection = db.getConnection();
             PreparedStatement statement = connection
-                .prepareStatement("SELECT name, course_number FROM course WHERE UPPER(name) LIKE UPPER(?) OR UPPER(course_number) LIKE UPPER(?)");
+                .prepareStatement("SELECT name, course_number FROM course WHERE UPPER(course_number || ' ' || name) LIKE UPPER(?)");
             statement.setString(1, "%" + subname + "%");
-            statement.setString(2, "%" + subname + "%");
+            //statement.setString(2, "%" + subname + "%");
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 String name = rs.getString(1);
