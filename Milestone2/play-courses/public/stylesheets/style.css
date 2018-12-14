@@ -1,7 +1,3 @@
-body{
-	background-image: url('@routes.Assets.at("images/bg.jpg")');
-}
-
 .title{
 	color: #000080;
 	font-size: 24px;

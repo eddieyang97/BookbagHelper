@@ -1,5 +1,6 @@
 body {
     color: black;
-    background: white;
+    background-image: url('bg.jpg');
+    background-size: 1200px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
 }
