@@ -1,0 +1,23 @@
+@(searchedName:String, professors: List[models.CourseDB.ProfessorInfo])
+
+@main("All Matched Professors for " + searchedName) { } {
+  <p>
+  <a href="@routes.Application.index()">Back to Main Page</a>
+  </p>
+  <p>Click on professor below to view more information (0.0 indicates the professor is not rated yet):
+  </p>
+	<table>
+		<tr>
+  			<th><a href="@routes.Application.searchProfessorSortByName(searchedName)">Name</a></th>
+  			<th><a href="@routes.Application.searchProfessorSortByQuality(searchedName)">Quality</a></th>
+     		<th><a href="@routes.Application.searchProfessorSortByDifficulty(searchedName)">Difficulty</a></th>
+		</tr>
+		@for(prof <- professors) {
+ 		<tr>
+    		<th><a href="@routes.Application.viewProfessor(prof.name)">@prof.name</a></th>
+    		<th>@prof.quality</th>
+    		<th>@prof.difficulty</th>
+ 		</tr>
+ 		}
+ 	</table>
+}

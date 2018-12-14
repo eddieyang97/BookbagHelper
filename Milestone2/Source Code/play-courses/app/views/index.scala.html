@@ -1,0 +1,34 @@
+<head>
+  <title>Bookbag Helper</title>
+	<link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/style.css")">
+</head>
+<body>
+  <div id="u1" class="title">
+      <img src="@routes.Assets.at("images/icon1.png")" alt="" class = "icon">
+      <h1>Bookbag Helper</h1>
+  </div>
+  <div class = "searches">
+    <div class = "search_bar">
+      @main("Search for professor: ") { } {
+      <form method="post" action="@routes.Application.searchProfessor()">
+      @helper.CSRF.formField
+      Name: <input type="text" name="professor" value="" size="30" maxlength="30"/>
+      <input type="submit" value="Submit"/>
+      </form>
+      }
+      <a href="@routes.Application.searchAllProfessor()">View All Professors</a>
+    </div>
+    <div class = "search_bar">
+      @main("Search for course: ") { } {
+      <form method="post" action="@routes.Application.searchCourse()">
+      @helper.CSRF.formField
+      Name: <input type="text" name="course" value="" size="30" maxlength="30"/>
+      <input type="submit" value="Submit"/>
+      </form>
+      }
+      <a href="@routes.Application.searchAllCourse()">View All Courses</a>
+    </div>
+  </div>
+  <p>
+  <a href="https://docs.google.com/forms/d/1NxBDAkktT_HUfSAYRhlgi7U8pQr4aQbkuNVEYcWzGOs/viewform?edit_requested=true">Contribute to Duke Bookbag Helper</a> 
+</body>

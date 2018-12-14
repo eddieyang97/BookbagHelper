@@ -1,0 +1,12 @@
+2018-12-14 18:17:34,943 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2018-12-14 18:17:35,095 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] connected at jdbc:postgresql://localhost/courses
+2018-12-14 18:17:35,526 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-5 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2018-12-14 18:17:35,695 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-12-14 18:17:35,699 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev)
+2018-12-14 18:18:46,663 [INFO] from play.core.server.AkkaHttpServer in pool-4-thread-2 - Stopping server...
+2018-12-14 18:18:46,712 [INFO] from application in pool-4-thread-2 - Shutting down connection pool.
